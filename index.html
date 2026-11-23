@@ -11,7 +11,10 @@
       name="description"
       content="Hi, my name is Nad1406. I'm a student at VN-UK."
     />
-    <meta name="keywords" content="Nad1406, portfolio, web developer, student, VN-UK" />
+    <meta
+      name="keywords"
+      content="Nad1406, portfolio, web developer, student, VN-UK"
+    />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="language" content="English" />
@@ -46,43 +49,136 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="font-sans antialiased bg-zinc-950 text-white selection:bg-white selection:text-zinc-950">
-    <main>
+  <body
+    class="font-sans antialiased bg-[#0B0B0F] text-zinc-100 selection:bg-[#FF6B9D]/30 selection:text-white"
+  >
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Floating Glass Pill Navigation -->
+    <header
+      class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(94vw,36rem)]"
+    >
+      <nav
+        aria-label="Primary"
+        class="glass-nav rounded-full px-2.5 sm:px-3.5 py-1.5 flex items-center justify-between gap-1"
+      >
+        <a
+          href="#home"
+          class="inline-flex items-center justify-center min-h-10 min-w-10 px-3 rounded-full font-display font-bold text-sm sm:text-base tracking-tight text-white hover:bg-white/10 transition-colors shrink-0"
+        >
+          N<span class="text-[#FF6B9D]">.</span>
+        </a>
+
+        <ul
+          role="list"
+          class="flex items-center justify-end gap-0.5 sm:gap-1.5"
+        >
+          <li>
+            <a
+              href="#about-me"
+              data-nav-link
+              class="inline-flex items-center justify-center min-h-10 px-2.5 sm:px-3.5 rounded-full text-xs sm:text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 whitespace-nowrap"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#skills"
+              data-nav-link
+              class="inline-flex items-center justify-center min-h-10 px-2.5 sm:px-3.5 rounded-full text-xs sm:text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 whitespace-nowrap"
+            >
+              Skills
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              data-nav-link
+              class="inline-flex items-center justify-center min-h-10 px-2.5 sm:px-3.5 rounded-full text-xs sm:text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 whitespace-nowrap"
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              data-nav-link
+              class="inline-flex items-center justify-center min-h-10 px-2.5 sm:px-3.5 rounded-full text-xs sm:text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 whitespace-nowrap"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="relative overflow-x-clip">
       <!-- banner -->
       <section
+        id="home"
         class="relative min-h-screen min-h-dvh w-full flex flex-col justify-center items-center bg-[url('/banner.avif')] bg-cover bg-center bg-no-repeat overflow-hidden"
       >
         <div
           aria-hidden="true"
-          class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/35 sm:from-black/65 sm:via-black/30 sm:to-transparent"
+          class="absolute inset-0 bg-gradient-to-r from-[#0B0B0F]/90 via-[#0B0B0F]/60 to-[#0B0B0F]/25"
         ></div>
         <div
           aria-hidden="true"
-          class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-black/20"
+          class="absolute inset-0 bg-gradient-to-t from-[#0B0B0F] via-transparent to-[#0B0B0F]/45"
         ></div>
 
-        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-24 text-left">
-          <h1
-            class="text-[clamp(2.25rem,1.4rem+3.4vw,4.5rem)] leading-[1.12] tracking-tight mb-10 sm:mb-12"
-          >
-            <span class="block font-semibold text-zinc-200">
-              Hi, my name is <span class="font-bold text-white">Nad1406</span>
+        <div
+          class="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-20 text-left"
+        >
+          <div class="banner-badge mb-6">
+            <span
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium uppercase tracking-[0.2em] bg-teal-400/15 border border-teal-300/30 text-teal-200 backdrop-blur-md"
+            >
+              <span
+                aria-hidden="true"
+                class="w-1.5 h-1.5 rounded-full bg-teal-300"
+              ></span>
+              Web Developer &bull; VN-UK Student
             </span>
-            <span class="block font-light text-zinc-300 mt-2 sm:mt-3">
-              I'm a student at <span class="whitespace-nowrap">VN-UK.</span>
+          </div>
+
+          <h1
+            class="banner-text font-display text-[clamp(2.5rem,1.5rem+4vw,5.25rem)] leading-[1.06] tracking-tight font-bold text-white mb-6"
+          >
+            <span class="block text-zinc-300 font-medium">HI, MY NAME IS</span>
+            <span class="block mt-1">
+              NAD1406<span class="text-[#FF6B9D]">.</span>
             </span>
           </h1>
 
-          <a
-            href="#about-me"
-            class="inline-flex items-center justify-center min-h-12 px-9 py-3.5 uppercase text-sm sm:text-base font-medium tracking-[0.2em] text-white border border-white/80 hover:bg-white hover:text-zinc-950 hover:border-white transition-colors duration-300"
+          <p
+            class="banner-text text-base sm:text-xl font-light text-zinc-300/90 max-w-xl leading-relaxed mb-10"
           >
-            Know more
-          </a>
+            I'm a student at <span class="whitespace-nowrap text-white font-normal">VN-UK</span>
+            crafting minimal, clean web experiences.
+          </p>
+
+          <div
+            class="banner-cta flex flex-wrap items-center gap-3.5 sm:gap-4"
+          >
+            <a
+              href="#about-me"
+              class="btn-rose inline-flex items-center justify-center min-h-12 px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold tracking-wide"
+            >
+              Know More
+            </a>
+            <a
+              href="#projects"
+              class="btn-glass inline-flex items-center justify-center min-h-12 px-8 py-3.5 rounded-full text-sm sm:text-base font-medium tracking-wide"
+            >
+              Explore Work
+            </a>
+          </div>
         </div>
       </section>
       <!-- banner ./ -->
@@ -90,80 +186,508 @@
       <!-- about me -->
       <section
         id="about-me"
-        class="min-h-screen min-h-dvh w-full bg-zinc-950 text-white flex flex-col justify-center items-center px-6 py-24 sm:px-10 lg:px-16"
+        class="relative w-full py-24 sm:py-32 px-6 sm:px-10 lg:px-16"
       >
-        <div class="w-full max-w-5xl mx-auto">
-          <h2
-            class="uppercase text-2xl sm:text-3xl lg:text-5xl text-center font-bold tracking-[0.2em] text-white"
-          >
-            About Me
-          </h2>
-          <div aria-hidden="true" class="w-12 h-px bg-zinc-700 mx-auto mt-5 mb-14 lg:mb-16"></div>
+        <div
+          aria-hidden="true"
+          class="ambient-orb ambient-orb--teal w-72 h-72 sm:w-96 sm:h-96 -top-10 -left-16"
+        ></div>
+        <div
+          aria-hidden="true"
+          class="ambient-orb ambient-orb--rose w-64 h-64 sm:w-80 sm:h-80 bottom-4 right-0"
+        ></div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-center">
-            <div class="col-span-1 flex justify-center">
-              <img
-                class="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 aspect-square object-cover rounded-2xl grayscale border border-zinc-800 bg-zinc-900 shadow-2xl shadow-black/70"
-                src="https://plus.unsplash.com/premium_vector-1719858611039-66c134efa74d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
-                alt="Nad1406 portrait"
-                width="288"
-                height="288"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-
-            <div
-              class="col-span-1 lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left"
+        <div class="relative z-10 w-full max-w-5xl mx-auto">
+          <div class="section-title text-center lg:text-left mb-10 sm:mb-12">
+            <p
+              class="text-xs font-medium uppercase tracking-[0.22em] text-teal-300 mb-3"
             >
-              <p
-                class="text-base sm:text-lg lg:text-xl font-light text-zinc-300 leading-relaxed mb-9 max-w-2xl"
+              01 / About Me
+            </p>
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white"
+            >
+              Minimal Code, Thoughtful Design
+            </h2>
+          </div>
+
+          <div
+            class="glass-panel section-content rounded-[28px] p-6 sm:p-10 lg:p-12"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center"
+            >
+              <div class="col-span-1 flex justify-center">
+                <div
+                  class="p-2 rounded-3xl bg-white/[0.04] border border-white/10 shadow-2xl shadow-black/60"
+                >
+                  <img
+                    class="w-52 h-52 sm:w-60 sm:h-60 lg:w-64 lg:h-64 aspect-square object-cover rounded-2xl bg-zinc-900"
+                    src="https://plus.unsplash.com/premium_vector-1719858611039-66c134efa74d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                    alt="Nad1406 portrait"
+                    width="288"
+                    height="288"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="col-span-1 lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left"
               >
-                I love programming, application development, and software architecture. I focus on
-                creating minimal, robust, and highly functional web applications.
-              </p>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center min-h-12 px-9 py-3.5 uppercase text-sm sm:text-base font-medium tracking-[0.2em] text-white border border-zinc-500 hover:bg-white hover:text-zinc-950 hover:border-white transition-colors duration-300"
-              >
-                View My CV
-              </a>
+                <p
+                  class="text-base sm:text-lg font-light text-zinc-300 leading-relaxed mb-6 max-w-2xl"
+                >
+                  I love programming, application development, and software
+                  architecture. I focus on creating minimal, robust, and highly
+                  functional web applications with crisp interfaces and smooth
+                  user interactions.
+                </p>
+
+                <ul
+                  role="list"
+                  class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-8"
+                >
+                  <li
+                    class="px-3.5 py-1.5 rounded-full text-xs font-medium text-teal-200 bg-teal-400/10 border border-teal-300/20"
+                  >
+                    VN-UK Student
+                  </li>
+                  <li
+                    class="px-3.5 py-1.5 rounded-full text-xs font-medium text-pink-200 bg-[#FF6B9D]/10 border border-[#FF6B9D]/25"
+                  >
+                    Web Development
+                  </li>
+                  <li
+                    class="px-3.5 py-1.5 rounded-full text-xs font-medium text-zinc-200 bg-white/[0.06] border border-white/10"
+                  >
+                    Software Architecture
+                  </li>
+                </ul>
+
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-glass inline-flex items-center justify-center min-h-12 px-8 py-3 rounded-full text-sm font-medium tracking-wide"
+                >
+                  View My CV
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <!-- about me ./ -->
 
+      <!-- skills -->
+      <section
+        id="skills"
+        class="relative w-full py-20 sm:py-28 px-6 sm:px-10 lg:px-16"
+      >
+        <div class="relative z-10 w-full max-w-5xl mx-auto">
+          <div class="section-title text-center lg:text-left mb-10 sm:mb-12">
+            <p
+              class="text-xs font-medium uppercase tracking-[0.22em] text-teal-300 mb-3"
+            >
+              02 / Capabilities
+            </p>
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white"
+            >
+              Tech Stack &amp; Focus
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            <article class="glass-card reveal-card rounded-[24px] p-7">
+              <div
+                aria-hidden="true"
+                class="w-11 h-11 rounded-full bg-teal-400/15 border border-teal-300/30 flex items-center justify-center text-teal-300 mb-5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-white mb-2">
+                Frontend Craft
+              </h3>
+              <p class="text-sm text-zinc-400 font-light leading-relaxed mb-5">
+                Semantic markup, modern CSS layouts, and fluid responsive
+                interfaces.
+              </p>
+              <ul role="list" class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  HTML5
+                </li>
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  Tailwind CSS
+                </li>
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  JavaScript
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card reveal-card rounded-[24px] p-7">
+              <div
+                aria-hidden="true"
+                class="w-11 h-11 rounded-full bg-[#FF6B9D]/15 border border-[#FF6B9D]/30 flex items-center justify-center text-[#FF85AD] mb-5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                  <path d="M9 3v18"></path>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-white mb-2">
+                UI &amp; Motion
+              </h3>
+              <p class="text-sm text-zinc-400 font-light leading-relaxed mb-5">
+                Glassmorphic surfaces, crisp typography, and purposeful scroll
+                animations.
+              </p>
+              <ul role="list" class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  Responsive UI
+                </li>
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  ScrollReveal
+                </li>
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  Accessibility
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card reveal-card rounded-[24px] p-7">
+              <div
+                aria-hidden="true"
+                class="w-11 h-11 rounded-full bg-sky-400/15 border border-sky-300/30 flex items-center justify-center text-sky-300 mb-5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-white mb-2">
+                Tooling &amp; Deploy
+              </h3>
+              <p class="text-sm text-zinc-400 font-light leading-relaxed mb-5">
+                Fast modern build pipelines and automated CI/CD static hosting.
+              </p>
+              <ul role="list" class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  Vite
+                </li>
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  Git &amp; GitHub
+                </li>
+                <li
+                  class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                >
+                  GitHub Actions
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- skills ./ -->
+
+      <!-- projects -->
+      <section
+        id="projects"
+        class="relative w-full py-20 sm:py-28 px-6 sm:px-10 lg:px-16"
+      >
+        <div
+          aria-hidden="true"
+          class="ambient-orb ambient-orb--teal w-72 h-72 top-16 right-0"
+        ></div>
+
+        <div class="relative z-10 w-full max-w-5xl mx-auto">
+          <div class="section-title text-center lg:text-left mb-10 sm:mb-12">
+            <p
+              class="text-xs font-medium uppercase tracking-[0.22em] text-teal-300 mb-3"
+            >
+              03 / Selected Work
+            </p>
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white"
+            >
+              Featured Projects
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Featured Wide Glass Card -->
+            <article
+              class="glass-card reveal-card md:col-span-2 rounded-[28px] overflow-hidden grid grid-cols-1 lg:grid-cols-5"
+            >
+              <div
+                aria-hidden="true"
+                class="lg:col-span-2 min-h-48 sm:min-h-56 relative bg-gradient-to-br from-teal-900/70 via-[#121722] to-[#261423] p-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10"
+              >
+                <span
+                  class="self-start px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-[0.18em] bg-teal-400/20 text-teal-200 border border-teal-300/30"
+                >
+                  Featured Build
+                </span>
+                <div class="mt-8">
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center font-display text-2xl font-bold text-white"
+                  >
+                    N<span class="text-[#FF6B9D]">.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-3 p-7 sm:p-9 flex flex-col justify-between">
+                <div>
+                  <h3
+                    class="font-display text-2xl sm:text-3xl font-bold text-white mb-3"
+                  >
+                    Nad1406 Portfolio
+                  </h3>
+                  <p
+                    class="text-sm sm:text-base text-zinc-300 font-light leading-relaxed mb-6"
+                  >
+                    Minimalist Glassmorphism landing page built with Vite,
+                    Tailwind CSS v4, ScrollReveal, and native CSS Scroll-Driven
+                    animations, deployed automatically via GitHub Actions.
+                  </p>
+                  <ul role="list" class="flex flex-wrap gap-2 mb-7">
+                    <li
+                      class="px-3 py-1 rounded-full text-xs text-teal-200 bg-teal-400/10 border border-teal-300/20"
+                    >
+                      Vite
+                    </li>
+                    <li
+                      class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                    >
+                      Tailwind CSS v4
+                    </li>
+                    <li
+                      class="px-3 py-1 rounded-full text-xs text-pink-200 bg-[#FF6B9D]/10 border border-[#FF6B9D]/25"
+                    >
+                      ScrollReveal
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://nad1406.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-rose inline-flex items-center justify-center min-h-10 px-6 py-2 rounded-full text-xs sm:text-sm font-semibold"
+                  >
+                    Live Site
+                  </a>
+                  <a
+                    href="https://github.com/Nad1406/Nad1406.github.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-glass inline-flex items-center justify-center min-h-10 px-6 py-2 rounded-full text-xs sm:text-sm font-medium"
+                  >
+                    GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article
+              class="glass-card reveal-card rounded-[24px] overflow-hidden flex flex-col"
+            >
+              <div
+                aria-hidden="true"
+                class="h-40 relative bg-gradient-to-br from-[#2a1524] via-[#13131b] to-teal-950/80 p-6 flex items-end border-b border-white/10"
+              >
+                <span
+                  class="px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-[0.16em] bg-[#FF6B9D]/20 text-pink-200 border border-[#FF6B9D]/30"
+                >
+                  UI Concept
+                </span>
+              </div>
+
+              <div class="p-7 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-display text-xl font-bold text-white mb-2.5">
+                    CineSwipe Concept UI
+                  </h3>
+                  <p
+                    class="text-sm text-zinc-400 font-light leading-relaxed mb-5"
+                  >
+                    Dark-mode movie discovery interface exploring frosted glass
+                    navigation, gesture-ready cards, and smooth transitions.
+                  </p>
+                </div>
+
+                <ul role="list" class="flex flex-wrap gap-2">
+                  <li
+                    class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                  >
+                    Glassmorphism
+                  </li>
+                  <li
+                    class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                  >
+                    Mobile First
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article
+              class="glass-card reveal-card rounded-[24px] overflow-hidden flex flex-col"
+            >
+              <div
+                aria-hidden="true"
+                class="h-40 relative bg-gradient-to-br from-slate-900 via-[#121620] to-teal-900/70 p-6 flex items-end border-b border-white/10"
+              >
+                <span
+                  class="px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-[0.16em] bg-teal-400/20 text-teal-200 border border-teal-300/30"
+                >
+                  Web App
+                </span>
+              </div>
+
+              <div class="p-7 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-display text-xl font-bold text-white mb-2.5">
+                    VN-UK Study Companion
+                  </h3>
+                  <p
+                    class="text-sm text-zinc-400 font-light leading-relaxed mb-5"
+                  >
+                    Clean student dashboard concept for organizing university
+                    coursework, deadlines, and lightweight Markdown notes.
+                  </p>
+                </div>
+
+                <ul role="list" class="flex flex-wrap gap-2">
+                  <li
+                    class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                  >
+                    JavaScript
+                  </li>
+                  <li
+                    class="px-3 py-1 rounded-full text-xs text-zinc-200 bg-white/[0.06] border border-white/10"
+                  >
+                    Minimal UI
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- projects ./ -->
+
       <!-- contact -->
       <section
         id="contact"
-        class="min-h-[500px] w-full bg-white text-zinc-950 flex flex-col justify-center items-center px-6 py-24 sm:px-10 lg:px-16"
+        class="relative w-full py-24 sm:py-32 px-6 sm:px-10 lg:px-16"
       >
-        <div class="w-full max-w-3xl mx-auto text-center flex flex-col items-center">
-          <h2
-            class="uppercase text-2xl sm:text-3xl lg:text-5xl font-bold tracking-[0.2em] text-zinc-950"
-          >
-            Contact
-          </h2>
-          <div aria-hidden="true" class="w-12 h-px bg-zinc-300 mt-5 mb-10"></div>
+        <div
+          aria-hidden="true"
+          class="ambient-orb ambient-orb--rose w-72 h-72 sm:w-96 sm:h-96 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        ></div>
 
-          <p
-            class="text-lg sm:text-xl lg:text-2xl font-medium uppercase tracking-[0.14em] text-zinc-800 mb-3"
+        <div class="relative z-10 w-full max-w-3xl mx-auto">
+          <div
+            class="glass-panel section-content rounded-[32px] px-6 py-12 sm:p-14 text-center flex flex-col items-center"
           >
-            I look forward to working with you
-          </p>
-          <p class="text-base sm:text-lg text-zinc-600 font-light max-w-xl mb-11">
-            I'm so happy that my skills might bring values to you. Let's connect for work.
-          </p>
+            <div class="section-title">
+              <p
+                class="text-xs font-medium uppercase tracking-[0.22em] text-teal-300 mb-3"
+              >
+                04 / Contact
+              </p>
+              <h2
+                class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5"
+              >
+                Let's Connect
+              </h2>
+            </div>
 
-          <a
-            href="mailto:oneone2683@gmail.com?subject=Hi%2C%20Nad1406%20-%20I%20want%20to%20connect%20with%20you%20for%20work&body=Please%20describe%20your%20work%20or%20project%20requirements."
-            class="inline-flex items-center justify-center min-h-12 px-10 py-4 uppercase text-sm sm:text-base font-medium tracking-[0.2em] bg-zinc-950 text-white border border-zinc-950 hover:bg-white hover:text-zinc-950 transition-colors duration-300"
-          >
-            Send An Email Now
-          </a>
+            <p
+              class="text-base sm:text-xl font-medium text-zinc-200 mb-2.5"
+            >
+              I look forward to working with you
+            </p>
+            <p
+              class="text-sm sm:text-base text-zinc-400 font-light max-w-lg mb-9"
+            >
+              I'm so happy that my skills might bring values to you. Let's
+              connect for internships, freelance builds, or collaboration.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-3.5">
+              <a
+                href="mailto:oneone2683@gmail.com?subject=Hi%2C%20Nad1406%20-%20I%20want%20to%20connect%20with%20you%20for%20work&body=Please%20describe%20your%20work%20or%20project%20requirements."
+                class="btn-rose inline-flex items-center justify-center min-h-12 px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold tracking-wide"
+              >
+                Send An Email Now
+              </a>
+              <button
+                id="copy-email-btn"
+                type="button"
+                class="btn-glass inline-flex items-center justify-center min-h-12 px-7 py-3.5 rounded-full text-sm sm:text-base font-medium tracking-wide cursor-pointer"
+              >
+                <span id="copy-email-label">Copy Email</span>
+              </button>
+              <span
+                id="copy-email-status"
+                aria-live="polite"
+                class="sr-only"
+              ></span>
+            </div>
+          </div>
         </div>
       </section>
       <!-- contact ./ -->
@@ -171,23 +695,26 @@
 
     <!-- footer -->
     <footer
-      class="w-full bg-neutral-950 text-zinc-400 min-h-[280px] py-16 px-6 flex flex-col justify-center items-center border-t border-zinc-900"
+      class="w-full bg-[#0B0B0F] text-zinc-400 py-14 px-6 flex flex-col justify-center items-center border-t border-white/10"
     >
       <div class="w-full max-w-3xl mx-auto flex flex-col items-center">
-        <ul role="list" class="flex flex-row items-center justify-center gap-6 sm:gap-8">
+        <ul
+          role="list"
+          class="flex flex-row items-center justify-center gap-4 sm:gap-6"
+        >
           <li>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center min-w-11 min-h-11 p-2 rounded-full opacity-65 hover:opacity-100 hover:-translate-y-1.5 transition-all duration-300"
+              class="btn-glass inline-flex items-center justify-center min-w-11 min-h-11 p-2.5 rounded-full opacity-80 hover:opacity-100"
             >
               <img
-                class="w-7 h-7"
+                class="w-5 h-5"
                 src="/imgs/twitter.svg"
                 alt="Twitter"
-                width="28"
-                height="28"
+                width="20"
+                height="20"
                 loading="lazy"
               />
             </a>
@@ -197,14 +724,14 @@
               href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center min-w-11 min-h-11 p-2 rounded-full opacity-65 hover:opacity-100 hover:-translate-y-1.5 transition-all duration-300"
+              class="btn-glass inline-flex items-center justify-center min-w-11 min-h-11 p-2.5 rounded-full opacity-80 hover:opacity-100"
             >
               <img
-                class="w-7 h-7"
+                class="w-5 h-5"
                 src="/imgs/linkedin.svg"
                 alt="LinkedIn"
-                width="28"
-                height="28"
+                width="20"
+                height="20"
                 loading="lazy"
               />
             </a>
@@ -214,22 +741,24 @@
               href="https://github.com/Nad1406"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center min-w-11 min-h-11 p-2 rounded-full opacity-65 hover:opacity-100 hover:-translate-y-1.5 transition-all duration-300"
+              class="btn-glass inline-flex items-center justify-center min-w-11 min-h-11 p-2.5 rounded-full opacity-80 hover:opacity-100"
             >
               <img
-                class="w-7 h-7"
+                class="w-5 h-5"
                 src="/imgs/github.svg"
                 alt="GitHub"
-                width="28"
-                height="28"
+                width="20"
+                height="20"
                 loading="lazy"
               />
             </a>
           </li>
         </ul>
 
-        <hr class="w-40 sm:w-56 border-zinc-800 my-9" />
-        <p class="text-sm text-zinc-500 tracking-widest">&copy; 2026 - Nad1406</p>
+        <hr class="w-36 sm:w-48 border-white/10 my-8" />
+        <p class="text-xs sm:text-sm text-zinc-500 tracking-widest">
+          &copy; 2026 - Nad1406
+        </p>
       </div>
     </footer>
     <!-- footer ./ -->
