@@ -1,7 +1,9 @@
 import "../css/style.css";
 import initScrollReveal from "./scroll-reveal";
+import initCursorTrail from "./cursor-trail";
 
 initScrollReveal();
+initCursorTrail();
 
 // Fallback for Scroll-Driven Progress Bar when CSS animation-timeline is unsupported
 const progressBar = document.querySelector("#scroll-progress");

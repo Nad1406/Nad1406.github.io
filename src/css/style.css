@@ -32,9 +32,17 @@ html {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+@property --spot-opacity {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 /* Frosted Dark-Glass Panels & Cards */
 .glass-panel,
 .glass-card {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.075),
@@ -46,6 +54,36 @@ html {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 24px 48px -16px rgba(0, 0, 0, 0.55);
+}
+
+.glass-panel::before,
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 107, 157, 0.16),
+    rgba(255, 255, 255, 0.04) 44%,
+    transparent 72%
+  );
+  opacity: var(--spot-opacity, 0);
+  transition: --spot-opacity 240ms ease, opacity 240ms ease;
+}
+
+.glass-panel:hover,
+.glass-card:hover {
+  --spot-opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .glass-panel::before,
+  .glass-card::before {
+    transition: none !important;
+    opacity: 0;
+  }
 }
 
 .glass-card {
@@ -199,5 +237,61 @@ html {
 
   .ambient-orb--rose {
     animation-delay: -8s;
+  }
+}
+
+/* Rose-Pink + Glassmorphism Pointer Trail & Lens Orb */
+#cursor-trail-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 45;
+}
+
+#cursor-glass-orb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 46;
+  opacity: 0;
+  background: radial-gradient(
+    circle at 30% 28%,
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 107, 157, 0.16) 55%,
+    rgba(255, 107, 157, 0.03) 100%
+  );
+  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  border: 1px solid rgba(255, 133, 173, 0.45);
+  box-shadow:
+    0 0 22px rgba(255, 107, 157, 0.28),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition:
+    opacity 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+#cursor-glass-orb.is-visible {
+  opacity: 1;
+}
+
+#cursor-glass-orb.is-hovering {
+  border-color: rgba(255, 133, 173, 0.82);
+  box-shadow:
+    0 0 30px rgba(255, 107, 157, 0.46),
+    inset 0 1px 2px rgba(255, 255, 255, 0.48);
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  #cursor-trail-canvas,
+  #cursor-glass-orb {
+    display: none !important;
   }
 }
