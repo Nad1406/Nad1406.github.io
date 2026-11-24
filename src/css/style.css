@@ -196,48 +196,34 @@ html {
   }
 }
 
-/* Subtle Ambient Glow Orbs */
-.ambient-orb {
-  position: absolute;
-  border-radius: 9999px;
+/* Simple Minimal Dark Backdrop */
+#site-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
   pointer-events: none;
-  filter: blur(72px);
+  background:
+    radial-gradient(
+      ellipse 70% 50% at 85% 15%,
+      rgba(255, 107, 157, 0.07) 0%,
+      rgba(255, 107, 157, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 60% 45% at 15% 10%,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0) 70%
+    ),
+    linear-gradient(180deg, #0b0b10 0%, #09090d 100%);
 }
 
-.ambient-orb--teal {
-  background: radial-gradient(
-    circle,
-    rgba(45, 212, 191, 0.14) 0%,
-    rgba(45, 212, 191, 0) 70%
-  );
-}
-
-.ambient-orb--rose {
-  background: radial-gradient(
-    circle,
-    rgba(255, 107, 157, 0.12) 0%,
-    rgba(255, 107, 157, 0) 70%
-  );
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  @keyframes orb-drift {
-    0%,
-    100% {
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    50% {
-      transform: translate3d(18px, -14px, 0) scale(1.06);
-    }
-  }
-
-  .ambient-orb {
-    animation: orb-drift 16s ease-in-out infinite;
-  }
-
-  .ambient-orb--rose {
-    animation-delay: -8s;
-  }
+/* Interactive Background Rose-Pink Smoke Canvas (above banner/backdrop, behind frosted glass cards) */
+#bg-smoke-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* Rose-Pink + Glassmorphism Pointer Trail & Lens Orb */
@@ -290,6 +276,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  #bg-smoke-canvas,
   #cursor-trail-canvas,
   #cursor-glass-orb {
     display: none !important;

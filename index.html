@@ -57,6 +57,8 @@
   <body
     class="font-sans antialiased bg-[#0B0B0F] text-zinc-100 selection:bg-[#FF6B9D]/30 selection:text-white"
   >
+    <div id="site-backdrop" aria-hidden="true"></div>
+    <canvas id="bg-smoke-canvas" aria-hidden="true"></canvas>
     <div id="scroll-progress" aria-hidden="true"></div>
     <canvas id="cursor-trail-canvas" aria-hidden="true"></canvas>
     <div id="cursor-glass-orb" aria-hidden="true"></div>
@@ -134,15 +136,15 @@
       <!-- banner -->
       <section
         id="home"
-        class="relative min-h-screen min-h-dvh w-full flex flex-col justify-center items-center bg-[url('/banner.avif')] bg-cover bg-center bg-no-repeat overflow-hidden"
+        class="relative min-h-screen min-h-dvh w-full flex flex-col justify-center items-center overflow-hidden"
       >
         <div
           aria-hidden="true"
-          class="absolute inset-0 bg-gradient-to-r from-[#0B0B0F]/90 via-[#0B0B0F]/60 to-[#0B0B0F]/25"
+          class="absolute inset-0 z-0 bg-[url('/banner.avif')] bg-cover bg-center bg-no-repeat opacity-85"
         ></div>
         <div
           aria-hidden="true"
-          class="absolute inset-0 bg-gradient-to-t from-[#0B0B0F] via-transparent to-[#0B0B0F]/45"
+          class="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#09090d]"
         ></div>
 
         <div
@@ -205,15 +207,6 @@
         id="about-me"
         class="relative w-full py-24 sm:py-32 px-6 sm:px-10 lg:px-16"
       >
-        <div
-          aria-hidden="true"
-          class="ambient-orb ambient-orb--teal w-72 h-72 sm:w-96 sm:h-96 -top-10 -left-16"
-        ></div>
-        <div
-          aria-hidden="true"
-          class="ambient-orb ambient-orb--rose w-64 h-64 sm:w-80 sm:h-80 bottom-4 right-0"
-        ></div>
-
         <div class="relative z-10 w-full max-w-5xl mx-auto">
           <div class="section-title text-center lg:text-left mb-10 sm:mb-12">
             <p
@@ -560,15 +553,6 @@
         id="projects"
         class="relative w-full py-20 sm:py-28 px-6 sm:px-10 lg:px-16"
       >
-        <div
-          aria-hidden="true"
-          class="ambient-orb ambient-orb--teal w-72 h-72 top-16 right-0"
-        ></div>
-        <div
-          aria-hidden="true"
-          class="ambient-orb ambient-orb--rose w-72 h-72 bottom-12 left-0"
-        ></div>
-
         <div class="relative z-10 w-full max-w-5xl mx-auto">
           <div
             class="section-title flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 text-center lg:text-left mb-12"
@@ -999,11 +983,6 @@
         id="contact"
         class="relative w-full py-24 sm:py-32 px-6 sm:px-10 lg:px-16"
       >
-        <div
-          aria-hidden="true"
-          class="ambient-orb ambient-orb--rose w-72 h-72 sm:w-96 sm:h-96 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        ></div>
-
         <div class="relative z-10 w-full max-w-3xl mx-auto">
           <div
             class="glass-panel section-content rounded-[32px] px-6 py-12 sm:p-14 text-center flex flex-col items-center"
@@ -1073,7 +1052,7 @@
 
     <!-- footer -->
     <footer
-      class="w-full bg-[#0B0B0F] text-zinc-400 py-14 px-6 flex flex-col justify-center items-center border-t border-white/10"
+      class="relative z-10 w-full bg-[#0B0B0F]/65 backdrop-blur-xl text-zinc-400 py-14 px-6 flex flex-col justify-center items-center border-t border-white/10"
     >
       <div class="w-full max-w-3xl mx-auto flex flex-col items-center">
         <ul
